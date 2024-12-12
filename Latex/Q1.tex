@@ -1,0 +1,97 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathptmx} % Times New Roman font
+\usepackage[a4paper,margin=1in]{geometry}
+
+\begin{document}
+
+\section*{Optimization Model}
+
+\subsection*{Objective Function}
+\[
+\text{Minimize } Z =
+\begin{aligned}[t]
+    & 20 \sum_{t \in T} x_{A,t} \\
+    & + 30 \sum_{t \in T} x_{B,t} \\
+    & + 10 \sum_{t \in T} x_{C,t} \\
+    & + \text{InventoryCost},
+\end{aligned}
+\]
+where:
+\[
+\text{InventoryCost} =
+\begin{aligned}[t]
+    & 1 \cdot \text{Storage}_{A} \\
+    & + 2 \cdot \text{Storage}_{B} \\
+    & + 0.5 \cdot \text{Storage}_{C}.
+\end{aligned}
+\]
+
+\subsection*{Constraints}
+
+1. **Time Constraints**:
+
+The time required to complete tasks \( A \), \( B \), and \( C \) in any month \( t \) (January, February, March, or April) must not exceed the available hours in that month. This can be expressed as:
+
+\[
+1.2 \cdot x_{A,t} + 
+1.3 \cdot x_{B,t} + 
+1 \cdot x_{C,t} \leq \text{AvailableHours}_t, 
+\]
+\[
+\forall t \in \{\text{January, February, March, April}\}.
+\]
+
+2. **Demand Constraints**:
+
+- **January**:
+\[
+x_{A,\text{January}} \geq \text{Demand}_{A,\text{January}},
+\]
+\[
+x_{B,\text{January}} \geq \text{Demand}_{B,\text{January}},
+\]
+\[
+x_{C,\text{January}} \geq \text{Demand}_{C,\text{January}}.
+\]
+
+- **February**:
+\[
+x_{A,\text{February}} + \text{Storage}_{A,\text{January}} \geq \text{Demand}_{A,\text{February}},
+\]
+\[
+x_{B,\text{February}} + \text{Storage}_{B,\text{January}} \geq \text{Demand}_{B,\text{February}},
+\]
+\[
+x_{C,\text{February}} + \text{Storage}_{C,\text{January}} \geq \text{Demand}_{C,\text{February}}.
+\]
+
+- **March**:
+\[
+x_{A,\text{March}} + \text{Storage}_{A,\text{February}} \geq \text{Demand}_{A,\text{March}},
+\]
+\[
+x_{B,\text{March}} + \text{Storage}_{B,\text{February}} \geq \text{Demand}_{B,\text{March}},
+\]
+\[
+x_{C,\text{March}} + \text{Storage}_{C,\text{February}} \geq \text{Demand}_{C,\text{March}}.
+\]
+
+- **April**:
+\[
+x_{A,\text{April}} + \text{Storage}_{A,\text{March}} \geq \text{Demand}_{A,\text{April}},
+\]
+\[
+x_{B,\text{April}} + \text{Storage}_{B,\text{March}} \geq \text{Demand}_{B,\text{April}},
+\]
+\[
+x_{C,\text{April}} + \text{Storage}_{C,\text{March}} \geq \text{Demand}_{C,\text{April}}.
+\]
+
+3. **Non-Negativity**:
+\[
+x_{i,t} \geq 0, \quad \forall i \in \{A, B, C\}, \, \forall t \in \{\text{January, February, March, April}\}.
+\]
+
+\end{document}

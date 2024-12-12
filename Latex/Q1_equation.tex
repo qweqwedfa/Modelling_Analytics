@@ -1,0 +1,16 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{mathptmx} % Times New Roman font
+\usepackage[a4paper,margin=1in]{geometry}
+
+\begin{document}
+
+\[
+\text{Minimize } Z = 20 \sum_{t \in T} x_{A,t} + 30 \sum_{t \in T} x_{B,t} + 10 \sum_{t \in T} x_{C,t} + \big(1 \cdot \text{Storage}_{A} + 2 \cdot \text{Storage}_{B} + 0.5 \cdot \text{Storage}_{C}\big),
+\]
+where:
+\[
+x_{i,t} \geq 0, \quad \forall i \in \{A, B, C\}, \, \forall t \in \{\text{January, February, March, April}\}.
+\]
+
+\end{document}

@@ -1,0 +1,181 @@
+GLPK 5.0  - SENSITIVITY ANALYSIS REPORT                                                                         Page   1
+
+Problem:    
+Objective:  Objective = 1323344.89 (MINimum)
+
+   No. Row name     St      Activity         Slack   Lower bound       Activity      Obj coef  Obj value at Limiting
+                                          Marginal   Upper bound          range         range   break point variable
+------ ------------ -- ------------- ------------- -------------  ------------- ------------- ------------- ------------
+     1 Demand_of_location_Bridgeport
+                    NL  111475.00000        .       111475.00000         .           -1.54000   1.15167e+06 Locations_from_plant_('Bridgeport',_'Cincinnati')
+                                           1.54000          +Inf   151111.00000          +Inf   1.38438e+06 Production_Cap_of_plant_Cincinnati
+
+     2 Demand_of_location_El_Paso
+                    NL    6800.00000        .         6800.00000         .           -2.04000   1.30947e+06 Locations_from_plant_('El_Paso',_'Cincinnati')
+                                           2.04000          +Inf    46436.00000          +Inf    1.4042e+06 Production_Cap_of_plant_Cincinnati
+
+     3 Demand_of_location_Glendale
+                    NL   33689.00000        .        33689.00000         .           -1.87000   1.26035e+06 Locations_from_plant_('Glendale',_'Oakland')
+                                           1.87000          +Inf   220531.00000          +Inf   1.67274e+06 Production_Cap_of_plant_Oakland
+
+     4 Demand_of_location_Houston
+                    NL  100447.00000        .       100447.00000         .           -1.65000   1.15761e+06 Locations_from_plant_('Houston',_'Cincinnati')
+                                           1.65000          +Inf   140083.00000          +Inf   1.38874e+06 Production_Cap_of_plant_Cincinnati
+
+     5 Demand_of_location_Jacksonville
+                    NL   68486.00000        .        68486.00000         .           -1.54000   1.21788e+06 Locations_from_plant_('Jacksonville',_'Cincinnati')
+                                           1.54000          +Inf   108122.00000          +Inf   1.38438e+06 Production_Cap_of_plant_Cincinnati
+
+     6 Demand_of_location_Kansas_City
+                    NL   24570.00000        .        24570.00000         .           -1.56000   1.28502e+06 Locations_from_plant_('Kansas_City',_'Cincinnati')
+                                           1.56000          +Inf    64206.00000          +Inf   1.38518e+06 Production_Cap_of_plant_Cincinnati
+
+     7 Demand_of_location_Little_Rock
+                    NL  148586.00000        .       148586.00000         .           -1.54000   1.09452e+06 Locations_from_plant_('Little_Rock',_'Cincinnati')
+                                           1.54000          +Inf   188222.00000          +Inf   1.38438e+06 Production_Cap_of_plant_Cincinnati
+
+     8 Demand_of_location_Los_Angeles
+                    NL   64761.00000        .        64761.00000         .           -1.87000   1.20224e+06 Locations_from_plant_('Los_Angeles',_'Oakland')
+                                           1.87000          +Inf   251603.00000          +Inf   1.67274e+06 Production_Cap_of_plant_Oakland
+
+     9 Demand_of_location_Pendleton
+                    NL   80290.00000        .        80290.00000         .           -2.14000   1.15152e+06 Locations_from_plant_('Pendleton',_'Oakland')
+                                           2.14000          +Inf   267132.00000          +Inf   1.72319e+06 Production_Cap_of_plant_Oakland
+
+    10 Demand_of_location_Sacramento
+                    NL  112000.00000        .       112000.00000         .           -1.80000   1.12174e+06 Locations_from_plant_('Sacramento',_'Oakland')
+                                           1.80000          +Inf   298842.00000          +Inf   1.65966e+06 Production_Cap_of_plant_Oakland
+
+GLPK 5.0  - SENSITIVITY ANALYSIS REPORT                                                                         Page   2
+
+Problem:    
+Objective:  Objective = 1323344.89 (MINimum)
+
+   No. Row name     St      Activity         Slack   Lower bound       Activity      Obj coef  Obj value at Limiting
+                                          Marginal   Upper bound          range         range   break point variable
+------ ------------ -- ------------- ------------- -------------  ------------- ------------- ------------- ------------
+    11 Demand_of_location_Santa_Ana
+                    NL   22418.00000        .        22418.00000         .           -1.87000   1.28142e+06 Locations_from_plant_('Santa_Ana',_'Oakland')
+                                           1.87000          +Inf   209260.00000          +Inf   1.67274e+06 Production_Cap_of_plant_Oakland
+
+    12 Production_Cap_of_plant_Cincinnati
+                    BS  460364.00000   39636.00000          -Inf   540654.00000        .11000   1.37398e+06 Locations_from_plant_('Pendleton',_'Cincinnati')
+                                            .       500000.00000   453564.00000        .35000   1.48447e+06 Locations_from_plant_('El_Paso',_'Oakland')
+
+    13 Production_Cap_of_plant_Oakland
+                    BS  313158.00000  186842.00000          -Inf   319958.00000       -.35000   1.21374e+06 Locations_from_plant_('El_Paso',_'Oakland')
+                                            .       500000.00000   273522.00000       -.11000    1.2889e+06 Locations_from_plant_('Pendleton',_'Cincinnati')
+
+GLPK 5.0  - SENSITIVITY ANALYSIS REPORT                                                                         Page   3
+
+Problem:    
+Objective:  Objective = 1323344.89 (MINimum)
+
+   No. Column name  St      Activity      Obj coef   Lower bound       Activity      Obj coef  Obj value at Limiting
+                                          Marginal   Upper bound          range         range   break point variable
+------ ------------ -- ------------- ------------- -------------  ------------- ------------- ------------- ------------
+     1 Locations_from_plant_('Bridgeport',_'Cincinnati')
+                    BS  111475.00000       1.54000        .        151111.00000        .        1.15167e+06 Demand_of_location_Bridgeport
+                                            .               +Inf   -75367.00000         1e+13   1.11475e+18 Locations_from_plant_('Bridgeport',_'Oakland')
+
+     2 Locations_from_plant_('Bridgeport',_'Oakland')
+                    NL        .              1e+13        .        -39636.00000       1.53906   -3.9636e+17 Production_Cap_of_plant_Cincinnati
+                                             1e+13          +Inf   111475.00000          +Inf   1.11475e+18 Locations_from_plant_('Bridgeport',_'Cincinnati')
+
+     3 Locations_from_plant_('El_Paso',_'Cincinnati')
+                    BS    6800.00000       2.04000        .         46436.00000        .        1.30947e+06 Demand_of_location_El_Paso
+                                            .               +Inf  -180042.00000       2.39000   1.32572e+06 Locations_from_plant_('El_Paso',_'Oakland')
+
+     4 Locations_from_plant_('El_Paso',_'Oakland')
+                    NL        .            2.39000        .        -39636.00000       2.04000   1.30947e+06 Production_Cap_of_plant_Cincinnati
+                                            .35000          +Inf     6800.00000          +Inf   1.32572e+06 Locations_from_plant_('El_Paso',_'Cincinnati')
+
+     5 Locations_from_plant_('Glendale',_'Cincinnati')
+                    NL        .              1e+13        .       -186842.00000       1.86914  -1.86842e+18 Production_Cap_of_plant_Oakland
+                                             1e+13          +Inf    33689.00000          +Inf    3.3689e+17 Locations_from_plant_('Glendale',_'Oakland')
+
+     6 Locations_from_plant_('Glendale',_'Oakland')
+                    BS   33689.00000       1.87000        .        220531.00000        .        1.26035e+06 Demand_of_location_Glendale
+                                            .               +Inf    -5947.00000         1e+13    3.3689e+17 Locations_from_plant_('Glendale',_'Cincinnati')
+
+     7 Locations_from_plant_('Houston',_'Cincinnati')
+                    BS  100447.00000       1.65000        .        140083.00000        .        1.15761e+06 Demand_of_location_Houston
+                                            .               +Inf   -86395.00000         1e+13   1.00447e+18 Locations_from_plant_('Houston',_'Oakland')
+
+     8 Locations_from_plant_('Houston',_'Oakland')
+                    NL        .              1e+13        .        -39636.00000       1.65039   -3.9636e+17 Production_Cap_of_plant_Cincinnati
+                                             1e+13          +Inf   100447.00000          +Inf   1.00447e+18 Locations_from_plant_('Houston',_'Cincinnati')
+
+     9 Locations_from_plant_('Jacksonville',_'Cincinnati')
+                    BS   68486.00000       1.54000        .        108122.00000        .        1.21788e+06 Demand_of_location_Jacksonville
+                                            .               +Inf  -118356.00000         1e+13    6.8486e+17 Locations_from_plant_('Jacksonville',_'Oakland')
+
+    10 Locations_from_plant_('Jacksonville',_'Oakland')
+                    NL        .              1e+13        .        -39636.00000       1.53906   -3.9636e+17 Production_Cap_of_plant_Cincinnati
+                                             1e+13          +Inf    68486.00000          +Inf    6.8486e+17 Locations_from_plant_('Jacksonville',_'Cincinnati')
+
+GLPK 5.0  - SENSITIVITY ANALYSIS REPORT                                                                         Page   4
+
+Problem:    
+Objective:  Objective = 1323344.89 (MINimum)
+
+   No. Column name  St      Activity      Obj coef   Lower bound       Activity      Obj coef  Obj value at Limiting
+                                          Marginal   Upper bound          range         range   break point variable
+------ ------------ -- ------------- ------------- -------------  ------------- ------------- ------------- ------------
+    11 Locations_from_plant_('Kansas_City',_'Cincinnati')
+                    BS   24570.00000       1.56000        .         64206.00000        .        1.28502e+06 Demand_of_location_Kansas_City
+                                            .               +Inf  -162272.00000         1e+13     2.457e+17 Locations_from_plant_('Kansas_City',_'Oakland')
+
+    12 Locations_from_plant_('Kansas_City',_'Oakland')
+                    NL        .              1e+13        .        -39636.00000       1.56055   -3.9636e+17 Production_Cap_of_plant_Cincinnati
+                                             1e+13          +Inf    24570.00000          +Inf     2.457e+17 Locations_from_plant_('Kansas_City',_'Cincinnati')
+
+    13 Locations_from_plant_('Little_Rock',_'Cincinnati')
+                    BS  148586.00000       1.54000        .        188222.00000        .        1.09452e+06 Demand_of_location_Little_Rock
+                                            .               +Inf   -38256.00000         1e+13   1.48586e+18 Locations_from_plant_('Little_Rock',_'Oakland')
+
+    14 Locations_from_plant_('Little_Rock',_'Oakland')
+                    NL        .              1e+13        .        -39636.00000       1.53906   -3.9636e+17 Production_Cap_of_plant_Cincinnati
+                                             1e+13          +Inf   148586.00000          +Inf   1.48586e+18 Locations_from_plant_('Little_Rock',_'Cincinnati')
+
+    15 Locations_from_plant_('Los_Angeles',_'Cincinnati')
+                    NL        .              1e+13        .       -186842.00000       1.86914  -1.86842e+18 Production_Cap_of_plant_Oakland
+                                             1e+13          +Inf    39636.00000          +Inf    3.9636e+17 Production_Cap_of_plant_Cincinnati
+
+    16 Locations_from_plant_('Los_Angeles',_'Oakland')
+                    BS   64761.00000       1.87000        .        251603.00000        .        1.20224e+06 Demand_of_location_Los_Angeles
+                                            .               +Inf    25125.00000         1e+13    6.4761e+17 Locations_from_plant_('Los_Angeles',_'Cincinnati')
+
+    17 Locations_from_plant_('Pendleton',_'Cincinnati')
+                    NL        .            2.03000        .       -186842.00000       2.14000    1.3439e+06 Production_Cap_of_plant_Oakland
+                                           -.11000          +Inf    39636.00000          +Inf   1.31898e+06 Production_Cap_of_plant_Cincinnati
+
+    18 Locations_from_plant_('Pendleton',_'Oakland')
+                    BS   80290.00000       2.14000        .        267132.00000        .        1.15152e+06 Demand_of_location_Pendleton
+                                            .               +Inf    40654.00000       2.03000   1.31451e+06 Locations_from_plant_('Pendleton',_'Cincinnati')
+
+    19 Locations_from_plant_('Sacramento',_'Cincinnati')
+                    NL        .              1e+13        .       -186842.00000       1.80078  -1.86842e+18 Production_Cap_of_plant_Oakland
+                                             1e+13          +Inf    39636.00000          +Inf    3.9636e+17 Production_Cap_of_plant_Cincinnati
+
+    20 Locations_from_plant_('Sacramento',_'Oakland')
+                    BS  112000.00000       1.80000        .        298842.00000        .        1.12174e+06 Demand_of_location_Sacramento
+                                            .               +Inf    72364.00000         1e+13      1.12e+18 Locations_from_plant_('Sacramento',_'Cincinnati')
+
+GLPK 5.0  - SENSITIVITY ANALYSIS REPORT                                                                         Page   5
+
+Problem:    
+Objective:  Objective = 1323344.89 (MINimum)
+
+   No. Column name  St      Activity      Obj coef   Lower bound       Activity      Obj coef  Obj value at Limiting
+                                          Marginal   Upper bound          range         range   break point variable
+------ ------------ -- ------------- ------------- -------------  ------------- ------------- ------------- ------------
+    21 Locations_from_plant_('Santa_Ana',_'Cincinnati')
+                    NL        .              1e+13        .       -186842.00000       1.86914  -1.86842e+18 Production_Cap_of_plant_Oakland
+                                             1e+13          +Inf    22418.00000          +Inf    2.2418e+17 Locations_from_plant_('Santa_Ana',_'Oakland')
+
+    22 Locations_from_plant_('Santa_Ana',_'Oakland')
+                    BS   22418.00000       1.87000        .        209260.00000        .        1.28142e+06 Demand_of_location_Santa_Ana
+                                            .               +Inf   -17218.00000         1e+13    2.2418e+17 Locations_from_plant_('Santa_Ana',_'Cincinnati')
+
+End of report

@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{times}  % Set font to Times New Roman
+
+\begin{document}
+
+\textbf{Objective Function:}
+\[
+\text{Minimize} \quad Z = \sum_{i \in \text{Locations}} \sum_{j \in \text{Plants}} x_{ij} \left( C_j + F_{ij} \right)
+\]
+Where:
+\begin{itemize}
+    \item \( x_{ij} \) is the amount of product shipped from location \( i \) to plant \( j \),
+    \item \( C_j \) is the production cost at plant \( j \),
+    \item \( F_{ij} \) is the freight cost from location \( i \) to plant \( j \),
+    \item \( \text{Locations} \) is the set of all locations,
+    \item \( \text{Plants} \) is the set of plants.
+\end{itemize}
+
+\bigskip
+
+\textbf{Constraints:}
+
+\bigskip
+
+1. \textbf{Production Capacity Constraint:}
+\[
+\sum_{i \in \text{Locations}} x_{ij} \leq \text{Production\_cap}_j \quad \forall j \in \text{Plants}
+\]
+Where \( \text{Production\_cap}_j \) is the production capacity of plant \( j \).
+
+\bigskip
+
+2. \textbf{Demand Fulfillment Constraint:}
+\[
+\sum_{j \in \text{Plants}} x_{ij} \geq \text{locations\_gallons}_i \quad \forall i \in \text{Locations}
+\]
+Where \( \text{locations\_gallons}_i \) is the demand at location \( i \).
+
+\bigskip
+
+\textbf{Decision Variables:}
+\[
+x_{ij} \geq 0 \quad \forall i \in \text{Locations}, j \in \text{Plants}
+\]
+
+\end{document}

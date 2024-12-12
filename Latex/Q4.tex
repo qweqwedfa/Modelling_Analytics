@@ -1,0 +1,55 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{times}
+
+\begin{document}
+
+\title{Transportation Optimization Model}
+\author{}
+\date{}
+\maketitle
+
+\section*{Objective Function}
+
+The objective is to minimize the total transportation cost. The total cost consists of two parts:
+
+\begin{itemize}
+    \item The transportation cost from production centers to warehouses:
+    \[
+    \text{Cost}_{\text{Production to Warehouse}} = \sum_{i \in \text{Production Centers}} \sum_{j \in \text{Warehouses}} C_{ij} \cdot X_1^{ij}
+    \]
+    where \( C_{ij} \) is the cost of transporting from production center \( i \) to warehouse \( j \), and \( X_1^{ij} \) is the decision variable representing the amount of goods transported from production center \( i \) to warehouse \( j \).
+
+    \item The transportation cost from warehouses to distribution centers:
+    \[
+    \text{Cost}_{\text{Warehouse to Distribution Center}} = \sum_{i \in \text{Warehouses}} \sum_{k \in \text{Distribution Centers}} D_{ik} \cdot X_2^{ik}
+    \]
+    where \( D_{ik} \) is the cost of transporting from warehouse \( i \) to distribution center \( k \), and \( X_2^{ik} \) is the decision variable representing the amount of goods transported from warehouse \( i \) to distribution center \( k \).
+\end{itemize}
+
+The objective function is the sum of both costs:
+\[
+\text{Minimize } Z = \sum_{i \in \text{Production Centers}} \sum_{j \in \text{Warehouses}} C_{ij} \cdot X_1^{ij} + \sum_{i \in \text{Warehouses}} \sum_{k \in \text{Distribution Centers}} D_{ik} \cdot X_2^{ik}
+\]
+
+\section*{Constraints}
+
+\subsection*{Flow Balance at Warehouses}
+For each warehouse \( j \), the amount of goods coming into the warehouse must equal the amount of goods going out. This is expressed as:
+\[
+\sum_{i \in \text{Production Centers}} X_1^{ij} = \sum_{k \in \text{Distribution Centers}} X_2^{jk} \quad \forall j \in \text{Warehouses}
+\]
+
+\subsection*{Supply at Production Centers}
+The total amount of goods sent from each production center must equal its supply. If the supply at production center \( i \) is \( S_i \), then:
+\[
+\sum_{j \in \text{Warehouses}} X_1^{ij} = S_i \quad \forall i \in \text{Production Centers}
+\]
+
+\subsection*{Demand at Distribution Centers}
+The total amount of goods received by each distribution center must equal its demand. If the demand at distribution center \( k \) is \( D_k \), then:
+\[
+\sum_{i \in \text{Warehouses}} X_2^{ik} = D_k \quad \forall k \in \text{Distribution Centers}
+\]
+
+\end{document}

@@ -1,0 +1,52 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{times}
+
+\begin{document}
+
+\section*{Optimization Model}
+
+\subsection*{Objective Function}
+Minimize:
+\[
+D3\_pos + D4\_pos
+\]
+
+\subsection*{Constraints}
+\begin{enumerate}
+    \item \textbf{Tax Rate Constraint:}
+    \[
+    T_2 \geq T_1
+    \]
+
+    \item \textbf{Balanced Budget:}
+    \[
+    G + 0.5G + 20T_1 + 5T_1 + 15T_2 = 1000 - C + D1\_pos - D1\_neg
+    \]
+
+    \item \textbf{Maximum Spending Cut:}
+    \[
+    C = 150 + D2\_pos - D2\_neg
+    \]
+
+    \item \textbf{High-Income Tax Cap:}
+    \[
+    0.5G + 5T_1 + 15T_2 = 550 + D3\_pos - D3\_neg
+    \]
+
+    \item \textbf{Low-Income Tax Cap:}
+    \[
+    G + 20T_1 = 350 + D4\_pos - D4\_neg
+    \]
+
+    \item \textbf{Deviation Constraints:}
+    \begin{align*}
+    D1\_neg &= 0 \quad \text{(Goal 1)} \\
+    D2\_pos &= 0 \quad \text{(Goal 2)} \\
+    D3\_pos &= 0 \quad \text{(Goal 3)} \\
+    \text{Minimize } D4\_pos &\quad \text{(Goal 4, included in Objective Function).}
+    \end{align*}
+\end{enumerate}
+
+\end{document}
